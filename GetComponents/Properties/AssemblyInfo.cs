@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("StatusCastApiDemo")]
+[assembly: AssemblyTitle("GetComponents")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("StatusCastApiDemo")]
+[assembly: AssemblyProduct("GetComponents")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("17e1e65f-a8dd-447a-96a4-bc37c6a0a9e8")]
+[assembly: Guid("3a6aefb2-9c8c-465b-bb5d-87bd495680de")]
 
 // Version information for an assembly consists of the following four values:
 //
