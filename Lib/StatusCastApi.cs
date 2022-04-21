@@ -18,7 +18,7 @@ namespace StatusCastApi
     using System = global::System;
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Client 
+    public partial class Client
     {
         private string _baseUrl = "https://{domain}";
         private System.Net.Http.HttpClient _httpClient;
@@ -59,6 +59,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<AuthenticationResponse> AuthenticateAsync(AuthenticationRequest body)
         {
             return AuthenticateAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Get Token
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual AuthenticationResponse Authenticate(AuthenticationRequest body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await AuthenticateAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -144,6 +154,16 @@ namespace StatusCastApi
             return RefreshAsync(body, System.Threading.CancellationToken.None);
         }
 
+        /// <summary>
+        /// Refresh Token
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual AuthenticationResponse Refresh(AuthenticationRefresh body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await RefreshAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
+        }
+
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <summary>
         /// Refresh Token
@@ -227,6 +247,16 @@ namespace StatusCastApi
             return BulkgroupsPOSTAsync(body, System.Threading.CancellationToken.None);
         }
 
+        /// <summary>
+        /// Bulk Create Groups
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void BulkgroupsPOST(System.Collections.Generic.IEnumerable<string> body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await BulkgroupsPOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
+        }
+
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <summary>
         /// Bulk Create Groups
@@ -277,19 +307,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -320,6 +350,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task BulkgroupsDELETEAsync(System.Collections.Generic.IEnumerable<int> body)
         {
             return BulkgroupsDELETEAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Bulk Delete Groups
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void BulkgroupsDELETE(System.Collections.Generic.IEnumerable<int> body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await BulkgroupsDELETEAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -372,19 +412,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -415,6 +455,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Component> ComponentPOSTAsync(ComponentCreate body)
         {
             return ComponentPOSTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Create Component
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Component ComponentPOST(ComponentCreate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await ComponentPOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -473,19 +523,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -516,6 +566,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Component> ComponentPUTAsync(ComponentUpdate body)
         {
             return ComponentPUTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Update Component
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Component ComponentPUT(ComponentUpdate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await ComponentPUTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -574,19 +634,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -617,6 +677,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task ComponentDELETEAsync(ComponentDelete body)
         {
             return ComponentDELETEAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Delete Component
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void ComponentDELETE(ComponentDelete body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await ComponentDELETEAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -669,19 +739,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -712,6 +782,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Component> ComponentGETAsync(int id)
         {
             return ComponentGETAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Get Component
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Component ComponentGET(int id)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await ComponentGETAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -771,19 +851,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -814,6 +894,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task SetstatusAsync(ComponentStatus body)
         {
             return SetstatusAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Set Component Status
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void Setstatus(ComponentStatus body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await SetstatusAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -866,19 +956,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -909,6 +999,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Component>> ComponentsAsync()
         {
             return ComponentsAsync(System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Get All Components
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Collections.Generic.ICollection<Component> Components()
+        {
+            return System.Threading.Tasks.Task.Run(async () => await ComponentsAsync(System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -964,19 +1064,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1007,6 +1107,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Group> GroupPOSTAsync(GroupCreate body)
         {
             return GroupPOSTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Create Group
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Group GroupPOST(GroupCreate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await GroupPOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1065,19 +1175,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1108,6 +1218,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Group> GroupPUTAsync(GroupUpdate body)
         {
             return GroupPUTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Update Group
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Group GroupPUT(GroupUpdate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await GroupPUTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1166,19 +1286,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1209,6 +1329,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Group> GroupGETAsync(int id)
         {
             return GroupGETAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Get Group
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Group GroupGET(int id)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await GroupGETAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1268,19 +1398,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1311,6 +1441,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task GroupDELETEAsync(int id)
         {
             return GroupDELETEAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Delete Group
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void GroupDELETE(int id)
+        {
+            System.Threading.Tasks.Task.Run(async () => await GroupDELETEAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1364,19 +1504,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1407,6 +1547,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task GroupactionPOSTAsync(BulkGroupAction body)
         {
             return GroupactionPOSTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Add to Group
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void GroupactionPOST(BulkGroupAction body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await GroupactionPOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1459,19 +1609,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1502,6 +1652,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task GroupactionDELETEAsync(BulkGroupAction body)
         {
             return GroupactionDELETEAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Remove from Group
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void GroupactionDELETE(BulkGroupAction body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await GroupactionDELETEAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1554,19 +1714,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1597,6 +1757,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<PagedResultsGroup> GroupsAsync(GroupSearch body)
         {
             return GroupsAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Search Groups
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual PagedResultsGroup Groups(GroupSearch body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await GroupsAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1655,19 +1825,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1698,6 +1868,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Incident> IncidentPOSTAsync(IncidentCreate body)
         {
             return IncidentPOSTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Create Incident
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Incident IncidentPOST(IncidentCreate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await IncidentPOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1756,19 +1936,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1799,6 +1979,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Incident> IncidentPUTAsync(IncidentUpdate body)
         {
             return IncidentPUTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Update Incident
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Incident IncidentPUT(IncidentUpdate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await IncidentPUTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1857,19 +2047,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -1900,6 +2090,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Incident> IncidentGETAsync(int id)
         {
             return IncidentGETAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Get Incident
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Incident IncidentGET(int id)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await IncidentGETAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -1959,19 +2159,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2002,6 +2202,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task IncidentDELETEAsync(int id)
         {
             return IncidentDELETEAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Delete Incident
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void IncidentDELETE(int id)
+        {
+            System.Threading.Tasks.Task.Run(async () => await IncidentDELETEAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2055,19 +2265,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2098,6 +2308,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<PagedResultsIncident> IncidentsAsync(IncidentSearch body)
         {
             return IncidentsAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Search Incidents
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual PagedResultsIncident Incidents(IncidentSearch body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await IncidentsAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2156,19 +2376,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2199,6 +2419,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task IncidentupdateAsync(int id)
         {
             return IncidentupdateAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Delete Incident Update
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void Incidentupdate(int id)
+        {
+            System.Threading.Tasks.Task.Run(async () => await IncidentupdateAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2252,19 +2482,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2295,6 +2525,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task MetricPOSTAsync(MetricDataCreate body)
         {
             return MetricPOSTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Create Metric Data
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void MetricPOST(MetricDataCreate body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await MetricPOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2347,19 +2587,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2390,6 +2630,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task MetricDELETEAsync(MetricProviderDelete body)
         {
             return MetricDELETEAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Delete Metric Data
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void MetricDELETE(MetricProviderDelete body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await MetricDELETEAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2442,19 +2692,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2485,6 +2735,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MetricGraphPoint>> MetricsAsync(MetricSearch body)
         {
             return MetricsAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Search Metrics
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Collections.Generic.ICollection<MetricGraphPoint> Metrics(MetricSearch body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await MetricsAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2543,19 +2803,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2586,6 +2846,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Page> PagePOSTAsync(PageCreate body)
         {
             return PagePOSTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Create Page
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Page PagePOST(PageCreate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await PagePOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2644,19 +2914,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2687,6 +2957,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Page> PagePUTAsync(PageUpdate body)
         {
             return PagePUTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Update Page
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Page PagePUT(PageUpdate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await PagePUTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2745,19 +3025,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2788,6 +3068,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Page> PageGETAsync(int id)
         {
             return PageGETAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Get Page
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Page PageGET(int id)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await PageGETAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2847,19 +3137,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2890,6 +3180,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<PagedResultsPage> PagesAsync(PageSearch body)
         {
             return PagesAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Search Pages
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual PagedResultsPage Pages(PageSearch body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await PagesAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -2948,19 +3248,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -2991,6 +3291,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Subscription> SubscriberPOSTAsync(SubscriptionCreate body)
         {
             return SubscriberPOSTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Create Subscriber
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Subscription SubscriberPOST(SubscriptionCreate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await SubscriberPOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3049,19 +3359,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3092,6 +3402,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Subscription> SubscriberPUTAsync(SubscriptionUpdate body)
         {
             return SubscriberPUTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Update Subscriber
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Subscription SubscriberPUT(SubscriptionUpdate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await SubscriberPUTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3150,19 +3470,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3193,6 +3513,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<Subscription> SubscriberGETAsync(int id)
         {
             return SubscriberGETAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Get Subscriber
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual Subscription SubscriberGET(int id)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await SubscriberGETAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3252,19 +3582,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3295,6 +3625,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task SubscriberDELETEAsync(int id)
         {
             return SubscriberDELETEAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Delete Subscriber
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void SubscriberDELETE(int id)
+        {
+            System.Threading.Tasks.Task.Run(async () => await SubscriberDELETEAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3348,19 +3688,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3391,6 +3731,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<PagedResultsSubscription> SubscribersAsync(SubscriptionSearch body)
         {
             return SubscribersAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Search Subscribers
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual PagedResultsSubscription Subscribers(SubscriptionSearch body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await SubscribersAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3449,19 +3799,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3492,6 +3842,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<User> UserPOSTAsync(UserCreate body)
         {
             return UserPOSTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Create User
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual User UserPOST(UserCreate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await UserPOSTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3550,19 +3910,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3593,6 +3953,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<User> UserPUTAsync(UserUpdate body)
         {
             return UserPUTAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Update User
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual User UserPUT(UserUpdate body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await UserPUTAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3651,19 +4021,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3694,6 +4064,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task UserDELETEAsync(DeleteUser body)
         {
             return UserDELETEAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Delete User
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual void UserDELETE(DeleteUser body)
+        {
+            System.Threading.Tasks.Task.Run(async () => await UserDELETEAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3746,19 +4126,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3789,6 +4169,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<User> UserGETAsync(int id)
         {
             return UserGETAsync(id, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Get User
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual User UserGET(int id)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await UserGETAsync(id, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3848,19 +4238,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -3891,6 +4281,16 @@ namespace StatusCastApi
         public virtual System.Threading.Tasks.Task<PagedResultsUser> UsersAsync(UserSearch body)
         {
             return UsersAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Search Users
+        /// </summary>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual PagedResultsUser Users(UserSearch body)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await UsersAsync(body, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -3949,19 +4349,19 @@ namespace StatusCastApi
                         else
                         if (status_ == 401)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Unauthorized", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 403)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("Forbidden", status_, responseText_, headers_, null);
                         }
                         else
                         if (status_ == 405)
                         {
-                            string responseText_ = ( response_.Content == null ) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            string responseText_ = (response_.Content == null) ? string.Empty : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
                             throw new ApiException("NotAllowed", status_, responseText_, headers_, null);
                         }
                         else
@@ -4056,7 +4456,7 @@ namespace StatusCastApi
                     var field = System.Reflection.IntrospectionExtensions.GetTypeInfo(value.GetType()).GetDeclaredField(name);
                     if (field != null)
                     {
-                        var attribute = System.Reflection.CustomAttributeExtensions.GetCustomAttribute(field, typeof(System.Runtime.Serialization.EnumMemberAttribute)) 
+                        var attribute = System.Reflection.CustomAttributeExtensions.GetCustomAttribute(field, typeof(System.Runtime.Serialization.EnumMemberAttribute))
                             as System.Runtime.Serialization.EnumMemberAttribute;
                         if (attribute != null)
                         {
@@ -4068,17 +4468,17 @@ namespace StatusCastApi
                     return converted == null ? string.Empty : converted;
                 }
             }
-            else if (value is bool) 
+            else if (value is bool)
             {
                 return System.Convert.ToString((bool)value, cultureInfo).ToLowerInvariant();
             }
             else if (value is byte[])
             {
-                return System.Convert.ToBase64String((byte[]) value);
+                return System.Convert.ToBase64String((byte[])value);
             }
             else if (value.GetType().IsArray)
             {
-                var array = System.Linq.Enumerable.OfType<object>((System.Array) value);
+                var array = System.Linq.Enumerable.OfType<object>((System.Array)value);
                 return string.Join(",", System.Linq.Enumerable.Select(array, o => ConvertToString(o, cultureInfo)));
             }
 
@@ -7021,8 +7421,8 @@ namespace StatusCastApi
 
 #pragma warning restore 1591
 #pragma warning restore 1573
-#pragma warning restore  472
-#pragma warning restore  114
-#pragma warning restore  108
+#pragma warning restore 472
+#pragma warning restore 114
+#pragma warning restore 108
 #pragma warning restore 3016
 #pragma warning restore 8603

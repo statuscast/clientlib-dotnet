@@ -17,21 +17,18 @@ namespace StatusCastApiDemo
             var password = "<PASSWORD>";
 
             var httpClient = new HttpClient();
-
             var apiClient = new StatusCastApi.Client(httpClient);
             apiClient.BaseUrl = statuspage;
 
-            var auth = apiClient.AuthenticateAsync(new StatusCastApi.AuthenticationRequest 
+            var auth = apiClient.Authenticate(new StatusCastApi.AuthenticationRequest 
             { 
                 UserName = username, 
                 Password = password
-            }).Result;
+            });
 
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.Token);
 
-            var components = apiClient.ComponentsAsync().Result;
-
-
+            var components = apiClient.ComponentsAsync();
         }
     }
 }
