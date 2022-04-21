@@ -17,7 +17,5 @@ var auth = apiClient.Authenticate(new StatusCast.AuthenticationRequest
 });
 
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.Token);
-
 var components = apiClient.Components();
-
 Console.WriteLine($"{components.Count} components found");
