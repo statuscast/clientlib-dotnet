@@ -12,15 +12,19 @@ namespace StatusCastApiDemo
     {
         static void Main(string[] args)
         {
+            var statuspage = "<STATUSPAGE>";
+            var username = "<USERNAME>";
+            var password = "<PASSWORD>";
+
             var httpClient = new HttpClient();
 
             var apiClient = new StatusCastApi.Client(httpClient);
-            apiClient.BaseUrl = "https://scott-test.ngrok.io";
+            apiClient.BaseUrl = statuspage;
 
             var auth = apiClient.AuthenticateAsync(new StatusCastApi.AuthenticationRequest 
             { 
-                UserName = "scott@statuscast.com", 
-                Password = "Q!q1q1q1" 
+                UserName = username, 
+                Password = password
             }).Result;
 
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.Token);
